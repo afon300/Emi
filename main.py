@@ -1,7 +1,7 @@
 import datetime
 import time
 
-from fonction_gpt import *
+from api_gpt import *
 from fonctions import *
 
 temps = datetime.datetime.now()
