@@ -4,15 +4,12 @@ def cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def dechiffrer_cesar(message_chiffre):
-    decalage = 1  # Décalage pour le chiffrement César
+    decalage = 1
 
-    message_dechiffre = ""  # Initialiser le message déchiffré
+    message_dechiffre = ""
 
-    # Parcourir chaque caractère dans le message chiffré
     for char in message_chiffre:
-        # Vérifier si le caractère est une lettre majuscule
         if char.isupper():
-            # Déchiffrer la lettre majuscule en appliquant le décalage
             lettre_dechiffree = chr((ord(char) - decalage - 65) % 26 + 65)
             message_dechiffre += lettre_dechiffree
 
