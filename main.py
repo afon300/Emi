@@ -26,7 +26,9 @@ dico_prompt = {"dis bonjour à tout le monde et souhaite leur de passer une bonn
 prompt1 = "Tu est un utilisateur de Twitter, fais des messages courts en moyenne 100 caractères. caractère, tu parle à tes amis, nous somme le"
 random_nb = random.randint(0, 7)
 for prompt_du_dico, num in dico_prompt.items():
-print(random_nb)
+    if num == random_nb:
+        prompt2 = prompt_du_dico
+        break
 prompt = prompt1 + " " + str(temps) + " " + prompt2
 reponse = GPT(prompt)
 print(reponse)
