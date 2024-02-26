@@ -1,4 +1,3 @@
-import time
 import random
 import os
 import openai
@@ -137,10 +136,10 @@ def fonction_nuit(temps, prompt1):
     return reponse
 
 def fonction_phrases_random(prompt1):
-    dico_phrases = dico_phrases()            
+    dico_phrase = dico_phrases()            
     random_nb = random.randint(1, 76)   
     prompt2 = ""      
-    for prompt_du_dico_random, num in dico_phrases.items():
+    for prompt_du_dico_random, num in dico_phrase.items():
         if num == random_nb:
             prompt2 = prompt_du_dico_random
             break

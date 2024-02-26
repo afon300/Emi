@@ -187,7 +187,7 @@ def dico_nom_anime():
         "Naruto Shippuden": 19,
         "JoJo": 20,
         "Hell's Paradise": 21,
-        "Steins;Gate": 22,
+        "Steins Gate": 22,
         "Soul Eater": 23,
         "Dragon Ball": 24,
         "The Promised Neverland": 25,

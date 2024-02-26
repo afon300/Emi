@@ -36,8 +36,6 @@ else:
 schedule.every().day.at(heure_aléatoire1).do(fonction_phrases_random)
 schedule.every().day.at(heure_aléatoire2).do(fonction_anime_random)
 
-prompt1 = prompt()
-
 ########## Programme Principal #########
 
 while True:
