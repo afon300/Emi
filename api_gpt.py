@@ -1,15 +1,4 @@
-import os
 import openai
-
-file_path = 'C:\\Users\\antoi\\Documents\\github\\LaughWithGPT\\key_open_ai.txt'
-
-if os.path.exists(file_path):
-    with open(file_path, 'r') as file:
-        content = file.read()
-        print(f"Contenu du fichier :\n{content}")
-else:
-    print(f"Le fichier {file_path} n'existe pas.")
-
 
 def dechiffrer_cesar(message_chiffre):
     decalage = 3

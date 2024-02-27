@@ -2,7 +2,6 @@ import random
 import os
 import sys
 
-sys.path.append(r'C:\Users\antoi\Documents\github\LaughWithGPT')
 from api_gpt import *
 from librairies_dico import *
 
