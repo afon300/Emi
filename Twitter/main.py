@@ -1,7 +1,6 @@
 import datetime
 import schedule
 import time
-import random
 
 from fonctions import *
 from librairies_dico import *

@@ -1,7 +1,9 @@
 import random
 import os
-import openai
+import sys
 
+sys.path.append(r'C:\Users\antoi\Documents\github\LaughWithGPT')
+from api_gpt import *
 from librairies_dico import *
 
 ################################################ BASIC FUNCTIONS ################################################
@@ -31,43 +33,9 @@ def minutes_aléatoire():
     
     return minute_formatee1, minute_formatee2, minute_formatee3
 
-
-def dechiffrer_cesar(message_chiffre):
-    decalage = 1
-
-    message_dechiffre = ""
-
-    for char in message_chiffre:
-        if char.isupper():
-            lettre_dechiffree = chr((ord(char) - decalage - 65) % 26 + 65)
-            message_dechiffre += lettre_dechiffree
-
-        elif char.islower():
-            lettre_dechiffree = chr((ord(char) - decalage - 97) % 26 + 97)
-            message_dechiffre += lettre_dechiffree
-        else:
-            message_dechiffre += char
-
-    return message_dechiffre
-
 def prompt():
     prompt1 = "Tu est une utilisatrice de Twitter, fan d'anime, tu a 16 ans, agis comme si tu avais une conversation normal entre toi et ton groupe, tu es gentille et attentionné, tu es un peu timide, fais des messages courts en moyenne 120 caractères dans le style des anime, tu parler à la 2e personne du pluriel quand tu pause des question. caractère, tu parle à tes amis, nous somme le"
     return prompt1
-################################################ API CHATGPT #################################################
-
-def gpt(prompt):
-    with open('key.txt', 'r') as f:
-        clé_chiffré = f.read()
-        clé_déchiffré = dechiffrer_cesar(clé_chiffré)
-    openai.api_key = clé_déchiffré
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo", 
-        messages=[{"role": "user", "content": prompt}]
-    )
-
-    reponse = (completion['choices'][0]['message']['content'])
-        
-    return reponse
 
 ############################################### DAILY FUNCTIONS ##############################################
 
