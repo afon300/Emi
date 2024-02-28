@@ -26,7 +26,7 @@ async def on_message(message): # Vérifie si le bot est mentionné et que ce n'e
         await message.channel.send(f"{author_mention} True") # Appelle le gestionnaire d'événements on_message normal pour les autres fonctionnalités
     await bot.process_commands(message)
 
-token_path = r'C:\Users\antoi\Documents\github\Emi\Token_discord.txt'
+token_path = r'C:\Users\antoi\Documents\github\Emi\key_discord.txt'
 with open(token_path, 'r') as f:
     clé_chiffré = f.read()
     clé_déchiffré = dechiffrer_cesar(clé_chiffré)
