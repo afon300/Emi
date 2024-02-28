@@ -7,14 +7,18 @@ sys.path.append(r'C:\Users\antoi\Documents\github\Emi')
 from api_gpt import *
 from librairies_dico import *
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 # Crée une instance du bot avec le préfixe de commande
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Événement pour indiquer que le bot est prêt
 @bot.event
 async def on_ready():
-    print(f'Logged in as {bot.user.name}')
+    print("----------------------")
+    print("Logged In As")
+    print("Username: %s"%bot.user.name)
+    print("ID: %s"%bot.user.id)
+    print("----------------------")
 
 # Commande pour répondre "True" lorsque l'utilisateur mentionne le bot avec une phrase
 @bot.event
