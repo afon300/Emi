@@ -2,8 +2,11 @@ import random
 import os
 import sys
 
+sys.path.append(os.getcwd())
 from api_gpt import *
 from librairies_dico import *
+
+chemin = os.path.join(os.getcwd(), "keys", "key_open_ai.txt")
 
 ################################################ BASIC FUNCTIONS ################################################
 
@@ -12,7 +15,7 @@ def cls():
     
 def heure_aléatoire():
     aléheure = random.randint(0, 23)
-    while (aléheure > 2 and aléheure < 8):
+    while (aléheure > 2 and aléheure < 9):
         aléheure = random.randint(0, 23)
     alémin = random.randint(0, 59)
     heure_formatee = str(aléheure).zfill(2)
@@ -63,7 +66,7 @@ def fonction_matin(jour, temps, prompt1):
             prompt2 = prompt_du_dico_matin
             break
     prompt = prompt1 + " " + str(temps) + " " + prompt2
-    reponse = gpt(prompt)
+    reponse = gpt(prompt, chemin)
     
     return reponse
 
@@ -85,7 +88,7 @@ def fonction_soir(jour, temps, prompt1):
             prompt2 = prompt_du_dico_soir
             break
     prompt = prompt1 + " " + str(temps) + " " + prompt2
-    reponse = gpt(prompt)
+    reponse = gpt(prompt, chemin)
         
     return reponse
     
@@ -98,7 +101,7 @@ def fonction_nuit(temps, prompt1):
             prompt2 = prompt_du_dico_nuit
             break
     prompt = prompt1 + " " + str(temps) + " " + prompt2
-    reponse = gpt(prompt)
+    reponse = gpt(prompt, chemin)
     
     return reponse
 
@@ -111,7 +114,7 @@ def fonction_phrases_random(prompt1):
             prompt2 = prompt_du_dico_random
             break
     prompt = prompt1 + " " + prompt2
-    reponse = gpt(prompt)
+    reponse = gpt(prompt, chemin)
     
     return reponse
 
@@ -136,6 +139,6 @@ def fonction_anime_random(prompt1):
         
     prompt2 = question.format(anime=nom_anime)
     prompt = prompt1 + " " + prompt2
-    reponse = gpt(prompt)
+    reponse = gpt(prompt, chemin)
     
     return reponse

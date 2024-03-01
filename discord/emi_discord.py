@@ -1,13 +1,14 @@
 import discord
 import sys
+import os
 
 from discord.ext import commands
 
-sys.path.append(r'C:\Users\antoi\Documents\github\Emi')
+sys.path.append(os.getcwd())
 from api_gpt import *
 from librairies_dico import *
 
-intents = discord.Intents.all()
+intents = discord.Intents.default()
 # Crée une instance du bot avec le préfixe de commande
 bot = commands.Bot(command_prefix='!', intents=intents)
 
@@ -30,7 +31,8 @@ async def on_message(message): # Vérifie si le bot est mentionné et que ce n'e
         await message.channel.send(f"{author_mention} True") # Appelle le gestionnaire d'événements on_message normal pour les autres fonctionnalités
     await bot.process_commands(message)
 
-token_path = r'C:\Users\antoi\Documents\github\Emi\key_discord.txt'
+token_path = os.path.join(os.getcwd(), "discord", "key_discord.txt")
+print(token_path)
 with open(token_path, 'r') as f:
     clé_chiffré = f.read()
     clé_déchiffré = dechiffrer_cesar(clé_chiffré)

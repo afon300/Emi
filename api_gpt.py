@@ -21,8 +21,8 @@ def dechiffrer_cesar(message_chiffre):
 
 ################################################ API CHATGPT #################################################
 
-def gpt(prompt):
-    with open('key_open_ai.txt', 'r') as f:
+def gpt(prompt, chemin):
+    with open(chemin, 'r') as f:
         clé_chiffré = f.read()
         clé_déchiffré = dechiffrer_cesar(clé_chiffré)
     openai.api_key = clé_déchiffré
