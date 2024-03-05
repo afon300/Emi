@@ -3,6 +3,7 @@ import sys
 import os
 
 from discord.ext import commands
+from fonctions_discord import *
 
 sys.path.append(os.getcwd())
 from api_gpt import *
@@ -27,8 +28,9 @@ async def on_message(message):
 
     if bot.user in message.mentions:
         await message.channel.send(f"Salut {message.author.mention}!")
-        print(message)
-
+        
+    process_discord_message(message)
+    
     await bot.process_commands(message)
 
 token_path = os.path.join(os.getcwd(), "keys", "key_discord.txt")
